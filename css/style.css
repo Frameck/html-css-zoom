@@ -6,7 +6,8 @@
 
 body {
     background-color: black;
-    color: white;
+    color: rgb(227, 227, 227);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header-container {
@@ -25,19 +26,41 @@ body {
 .main-container {
     height: calc(100vh - 45px - 54px);
     overflow: hidden;
+    position: relative;
 }
 
 .users-container {
     width: 90vw;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    overflow: hidden;
 }
 
-.users-container > div {
+.user-box {
     width: calc(100% / 5);
-    height: calc(100% / 5);
+    height: calc(100% / 3);
     border: 3px solid transparent;
+    position: relative;
+    min-width: 200px;
+    max-width: 250px;
+    min-height: 50px;
+    max-height: 150px;
+    flex-shrink: 0;
+}
+
+.user-box::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f131 Username";
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px;
 }
 
 .users-container > div:hover {
@@ -49,12 +72,76 @@ body {
     height: 100%;
 }
 
+.page-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #232427;
+    padding: 20px 14px;
+}
 
+.page-btn i {
+    font-size: 50px;
+}
 
+.page-btn:hover i {
+    color: rgb(24, 185, 244);
+}
 
+.page-btn-left {
+    left: 0;
+}
+
+.page-btn-right {
+    right: 0;
+}
 
 .footer-container {
     height: 54px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: rgb(29, 29, 29);
+}
+
+.footer-container i {
+    font-size: 22px;
+    padding: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container > div > .arrow-up-icon {
+    padding: 0 15px;
+}
+
+.center-footer {
+    width: 50%;
+}
+
+.controls > div {
+    text-align: center;
+}
+
+.right-footer button {
+    color: red;
+    background-color: transparent;
+    border: none;
+    padding: 15px;
+}
+
+.right-footer button:hover {
+    background-color: rgb(85, 85, 85);
+}
+
+.share-screen i {
+    color: green;
+}
+
+.footer-text {
+    font-size: 14px;
 }
